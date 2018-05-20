@@ -8,7 +8,7 @@
   (. instance setClassIndex (dec (. instance numAttributes)))
   instance)
 
-(defn shuffle->instance!
+(defn shuffle-instance!
   "Takes an INSTANCES object and produces a shuffled copy."
   [original]
   (def copy (new weka.core.Instances original))
@@ -31,7 +31,7 @@ FILENAME."
 this ridiculous minus sign, which makes me feel lesser. :-("
   [& args]
   (println "Example: producing pairs (test, train) for iris.arff.")
-  (def shuffled-copy (shuffle->instance! (arff->instance "iris.arff")))
+  (def shuffled-copy (shuffle-instance! (arff->instance "iris.arff")))
   (dorun 
    (for [i (range 1 11)]
      (do 
